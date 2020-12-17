@@ -1,5 +1,8 @@
 <script lang="typescript">
 	import { onMount } from "svelte";
+	import {} from "../public/mock.json";
+	import Lamp from "./Lamp.svelte";
+
 	export let name: string;
 
 	let count: number = 0;
@@ -51,6 +54,7 @@
 </style>
 
 <main>
+	<!--
 	<figure
 		class="md:flex bg-gradient-to-tr from-yellow-200 to-purple-600 rounded-xl p-8 md:p-0">
 		<img
@@ -79,4 +83,7 @@
 			</figure>
 		</div>
 	</figure>
+-->
+
+	<Lamp />
 </main>
