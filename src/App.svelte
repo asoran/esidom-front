@@ -2,7 +2,8 @@
 	import { onMount } from "svelte";
 	import {} from "../public/mock.json";
 	import Lamp from "./Lamp.svelte";
-
+	import Sensor from "./Sensor.svelte";
+	
 	export let name: string;
 
 	let count: number = 0;
@@ -86,4 +87,5 @@
 -->
 
 	<Lamp />
+	<Sensor/>
 </main>
