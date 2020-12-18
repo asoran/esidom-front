@@ -32,8 +32,8 @@
     const name = LAMP.entity_id.split(".")[0];
     let isOn = LAMP.state === "on";
     $: src_lamp = isOn
-        ? "https://previews.123rf.com/images/dvarg/dvarg1203/dvarg120300019/12676347-light-filament-lamp-on-a-white-background-illustration-for-design.jpg"
-        : "https://previews.123rf.com/images/pixelrobot/pixelrobot1504/pixelrobot150400921/38251282-100-watt-light-bulb-off-isolated-on-white-background-.jpg";
+        ? "lampe-allumee.png"
+        : "lampe-eteinte.png";
 
     let br = LAMP.attributes.brightness;
 
@@ -85,16 +85,43 @@
 </script>
 
 <style>
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .container_item {
+        background-color: #689d59;
+    }
+
+    .background_img_item {
+        background-color: #86b17a;
+    }
+
+    h2 {
+        color: white;
+    }
+
 </style>
 
 <template>
-    <h1>Lamp: {name} is {isOn ? 'on' : 'off'}</h1>
-    <img
-        src={src_lamp}
-        width="100px"
-        height="100px"
-        alt=""
-        on:click={switch_lamp} />
-    {#if isOn}<input type="range" bind:value={br} on:change={change} />{/if}
-    ({br})
+    <div class="container_item flex rounded-xl w-max min-w-full md:min-w-0">
+        <div class="background_img_item flex rounded-xl  rounded-r-none ">
+            <div class="flex-none w-20 relative mt-2">
+                <img class="object-contain md:object-scale-down"
+                src={src_lamp}
+                alt=""
+                on:click={switch_lamp} />
+            </div>
+        </div>
+    <form class="flex-auto p-6">
+        <div class="flex flex-wrap">
+            <h2 class="flex-auto text-base font-semibold"> Lamp: {name} is {isOn ? 'on' : 'off'}</h2>
+        </div>
+        <div class="w-full flex-none text-xs font-medium text-white mt-1" >
+            {#if isOn}<input type="range" bind:value={br} on:change={change} />{/if}
+            ({br})
+        </div>
+    </form>
+</div>
 </template>

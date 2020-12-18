@@ -19,7 +19,9 @@
 	:global(body) {
 		margin: 0;
 		font-family: Arial, Helvetica, sans-serif;
+		background-color: #120639;
 	}
+
 	/*
 	div code {
 		background: #0002;
@@ -55,6 +57,23 @@
 </style>
 
 <main>
+	<div>	
+		<div class="grid grid-flow-col grid-rows-2 grid-cols-4 mt-4 ml-4">
+			<div>
+				<Lamp />
+			</div>
+			<div class= "row-start-1 col-start-2">
+			<Sensor />
+			</div>
+		</div>
+		<div class = "absolute bottom-0 right-0 h-16 w-16">
+			<button 
+			class="py-2 px-4 bg-blue-400  text-white text-xl font-semibold rounded-full shadow-md hover:bg-blue-500 focus:outline-none absolute" 
+			type="button"> + </button>
+		</div>
+	</div>
+
+
 	<!--
 	<figure
 		class="md:flex bg-gradient-to-tr from-yellow-200 to-purple-600 rounded-xl p-8 md:p-0">
@@ -84,8 +103,5 @@
 			</figure>
 		</div>
 	</figure>
--->
-
-	<Lamp />
-	<Sensor/>
+	-->
 </main>
